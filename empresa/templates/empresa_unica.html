@@ -36,14 +36,15 @@
         <div class="row">
             <div class="col-md-6">
                 <label>Nicho de mercado:</label>
-                <input disabled type="text" class="form-control" value="Nicho">
+                <input disabled type="text" class="form-control" value="{{empresa.get_nicho_mercado_display}}">
             </div>
 
             <div class="col-md-3">
                 <label>Tecnologias usadas:</label>
                 <select class="form-select">   
-                       <option>---</option>
-
+                    {% for tech in empresa.tecnologias.all %}
+                        <option>{{tech}}</option>
+                    {% endfor %}
                 </select>
                 
             </div>
